@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewBagandViewData</title>
+</head>
+<body>
+    <div> 
+        <ul>
+            @foreach (var i in ViewBag.Language)
+            {
+                <li>
+                    @i
+                </li>
+            }
+            
+        </ul>
+
+        @foreach(var i in ViewBag.Student)
+        {
+            <div>
+
+                Name=@i.name, Email=@i.email
+            </div>
+        }
+    </div>
+
+    <h1>@ViewData["mykey"]</h1>
+    <ul>
+        @foreach(var i in (List<string>) ViewData["myList"])
+        {
+            <li>@i</li>
+        }
+    </ul>
+   
+</body>
+</html>

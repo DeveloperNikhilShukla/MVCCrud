@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MVCCrud.Models.Student>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div> 
+        @Html.DisplayName("name") - @Html.Editor("id")
+    </div>
+    <br />
+    <br />
+    @Html.DisplayName("name")
+    @*@Html.DisplayFor(x => x.DateOfBirth)*@
+    <br />
+    <br />
+    @*@Html.DisplayFor(x => x.Collage)*@
+
+
+    @using (Html.BeginForm("myform"))
+    {
+
+        @Html.EditorForModel()
+        <input type="submit" value="OK" />
+    }
+</body>
+</html>
